@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+
+        body {
+            background-image: url('https://images.unsplash.com/photo-1495195129352-aeb325a55b65?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8YmFja2dyb3VuZCUyMGRlc2lnbnxlbnwwfHwwfHx8MA%3D%3D&w=1000&q=80');
+            background-size: cover;
+            background-position: center;
+        }
+      .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .form {
+            padding: 50px;
+            max-width: 500px;
+            margin:150 auto;
+            font-size:16;
+            font-family:Verdana;
+        }
+
+        .form input[type="username"],
+        .form input[type="first_name"],
+        .form input[type="last_name"]
+        .form input[type="email"],
+        .form input[type="password"]
+        .form input[type="confirm_password"]
+
+        {
+            width: 300px;
+            padding: 10px;
+            font-size: 16px;
+        }
+
+        .form input[type="submit"] {
+
+            font-size: 16px;
+            margin-top: 10px;
+        }
+
+         h2 {text-align: center;}
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="form">
+<h2>Registration</h2>
+<form action="register" method="post">
+{% csrf_token %}
+    <input type="text" name="username" placeholder="username"><br>
+    <input type="text" name="first_name" placeholder="enter your first name"><br>
+    <input type="text" name="last_name" placeholder="enter your last name"><br>
+    <input type="email" name="email" placeholder="enter your email"><br>
+    <input type="password" name="password" placeholder="enter your password"><br>
+    <input type="password" name="confirm_password" placeholder="confirm your password"><br>
+    <input type="submit">
+</form>
+
+{% for msg in messages %}
+        <h2>{{msg}}</h2>
+{% endfor %}
+    </div>
+</div>
+</body>
+</html>

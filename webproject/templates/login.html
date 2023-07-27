@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+  <style>
+
+        body {
+            background-image: url('https://thumbs.dreamstime.com/b/spring-summer-season-abstract-nature-background-grass-blue-sky-back-49716369.jpg');
+            background-size: cover;
+            background-position: center;
+        }
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .form {
+            padding: 50px;
+            max-width: 500px;
+            margin:150 auto;
+            font-size:13;
+            font-family:Verdana;
+        }
+
+        .form input[type="text"],
+        .form input[type="password"] {
+            width: 300px;
+            padding: 10px;
+            font-size: 16px;
+        }
+
+        .form input[type="submit"] {
+            padding: 10px 20px;
+            font-size: 16px;
+            margin-top: 10px;
+        }
+
+        h2 {text-align: center;}
+
+    </style>
+</head>
+
+<div class="container">
+    <div class="form">
+<h2>User login</h2>
+<form action ="login" method="post">
+  {% csrf_token %}
+  <input type="text" name="username" placeholder="enter your username"><br>
+  <input type="password" name="password" placeholder="enter your password"><br>
+  <div class="submit-button">
+                <input type="submit" value="Submit">
+  </div>
+</form>
+
+     </div>
+</div>
+
+</body>
+</html>
